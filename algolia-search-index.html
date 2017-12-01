@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.css">
+    <link rel="stylesheet" type="text/css" href="./algolia-style.css">
+</head>
+
+<body>
+
+    <!-- INTERFACE -->
+    <header>
+        <a href="."><img src="https://www.fpx.com/hs-fs/hubfs/FPX%20Logos/FPX-single-header-logo.png?t=1506350568781&width=200&cos_cdn=1&name=FPX-single-header-logo.png"/></a>
+        <div id="search-input"></div>
+    </header>
+
+    <main>
+        <div id="left-column">
+          <div id="Facet1" class="facet"></div>
+          <div id="Facet2" class="facet"></div>
+          <div id="Facet3" class="facet"></div>
+        </div>
+        <div id="right-column">
+<!--            <div id="sort-by-wrapper"><span id="sort-by"></span></div>-->
+            <div id="stats"></div>
+            <div id="hits"></div>
+            <div id="pagination"></div>
+        </div>
+    </main>
+
+    <footer>
+    </footer>
+    
+    <!-- /INTERFACE -->
+
+    <!-- TEMPLATES -->
+    <script type="text/html" id="hit-template">
+        <div class="hit">
+            <!--<div class="hit-image">
+                <img src="{{image}}" alt="{{name}}">-->
+            </div>
+            <div class="hit-content">
+                <!--the class here is the css format, the value is the information displayed-->
+                <h2 class="hit-name"><a href={{{Address}}}>{{{Title}}}</a></h2>
+                <p class="hit-url"><i>{{{Address}}}</i></p>
+                <p class="hit-description">{{{_snippetResult.Body.value}}}</p>
+                
+            </div>
+    </script>
+
+    <script type="text/html" id="no-results-template">
+        <div id="no-results-message">
+            <p>We didn't find any results for the search <em>"{{query}}"</em>.</p>
+            <a href="." class='clear-all'>Clear search</a>
+        </div>
+    </script>
+    <!-- /TEMPLATES -->
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
+    <script src="algolia-search.js"></script>
+</body>
+
+</html>
